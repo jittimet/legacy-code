@@ -5,19 +5,35 @@ public class FizzBuzz {
 
     public static final String FIZZ = "Fizz";
     public static final String BUZZ = "Buzz";
+    public static final String FIZZ_BUZZ = "FizzBuzz";
+
+
     public String answer(int i) {
-//        if(i==1) {
-//            return "1";
-//        }
-        if(i==3 || i==6){
+
+        if(isaFizzBuzz(i))
+        {
+            return FIZZ_BUZZ;
+        }
+        if (isaFizz(i)) {
             return FIZZ;
         }
-        if(i==5)
-        {
+        if (isaBuzz(i)) {
             return BUZZ;
         }
 
         return Integer.toString(i);
+    }
+
+    private boolean isaFizzBuzz(int i) {
+        return isaFizz(i) && isaBuzz(i);
+    }
+
+    private boolean isaBuzz(int i) {
+        return i%5 ==0;
+    }
+
+    private boolean isaFizz(int i) {
+        return i%3 ==0;
     }
 
 }
