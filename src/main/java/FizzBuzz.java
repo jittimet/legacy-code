@@ -5,8 +5,10 @@ public class FizzBuzz {
 
 
     public String answer(int i) {
-        return "1";
-
+//        if(i==1) {
+//            return "1";
+//        }
+        return Integer.toString(i);
     }
 
 }
