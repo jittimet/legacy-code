@@ -3,37 +3,32 @@
  */
 public class FizzBuzz {
 
-    public static final String FIZZ = "Fizz";
-    public static final String BUZZ = "Buzz";
-    public static final String FIZZ_BUZZ = "FizzBuzz";
-
 
     public String answer(int i) {
 
-        if(isaFizzBuzz(i))
+        FizzBuzzRule fizzbuzzrule = new FizzBuzzRule();
+        if(fizzbuzzrule.isAnswer(i))
         {
-            return FIZZ_BUZZ;
+            return fizzbuzzrule.getAnswer();
         }
-        if (isaFizz(i)) {
-            return FIZZ;
+        FizzRule fizzrule = new FizzRule();
+        if (fizzrule.isAnswer(i)) {
+            return fizzrule.getAnswer();
         }
-        if (isaBuzz(i)) {
-            return BUZZ;
+        BuzzRule rule = new BuzzRule();
+        if (rule.isAnswer(i)) {
+            return rule.getAnswer();
         }
 
         return Integer.toString(i);
     }
 
-    private boolean isaFizzBuzz(int i) {
-        return isaFizz(i) && isaBuzz(i);
-    }
-
-    private boolean isaBuzz(int i) {
+    /*private boolean isaBuzz(int i) {
         return i%5 ==0;
     }
 
     private boolean isaFizz(int i) {
         return i%3 ==0;
-    }
+    }*/
 
 }

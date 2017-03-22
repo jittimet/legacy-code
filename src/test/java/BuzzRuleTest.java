@@ -14,40 +14,36 @@ import static org.junit.Assert.assertEquals;
  */
 
 @RunWith(Parameterized.class)
-public class FizzBuzzTest {
+public class BuzzRuleTest {
 
-    private FizzBuzz game;
+    private BuzzRule game;
 
     private int input;
-    private String expected;
+    private boolean expected;
 
     @Parameterized.Parameters
     public static Collection FizzBusData() {
         return Arrays.asList(new Object[][]{
-                {1, "1"},
-                {2, "2"},
-                {3, FizzRule.FIZZ},
-                {5, BuzzRule.BUZZ},
-                {6, FizzRule.FIZZ},
-                {10, BuzzRule.BUZZ},
-                {15, FizzBuzzRule.FIZZ_BUZZ }
+                {5, true},
+                {10, true}
+
         });
     }
 
 
-    public FizzBuzzTest(int input, String expected) {
+    public BuzzRuleTest(int input, boolean expected) {
         this.input = input;
         this.expected = expected;
     }
 
     @Before
     public void setup() {
-        game = new FizzBuzz();
+        game = new BuzzRule();
     }
 
     @Test
     public void shouldBe() {
-        assertEquals(this.expected, game.answer(this.input));
+        assertEquals(this.expected, game.isAnswer(this.input));
     }
 
 
