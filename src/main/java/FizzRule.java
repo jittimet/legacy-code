@@ -1,11 +1,11 @@
 /**
  * Created by cadet on 3/22/2017 AD.
  */
-public class FizzRule {
+public class FizzRule implements Rule {
 
     public static final String FIZZ = "Fizz";
 
-    public boolean isAnswer(int input) {
+    public Boolean isAnswer(int input) {
         return input % 3 ==0;
     }
 
