@@ -31,7 +31,9 @@ public class FizzBuzzTest {
                 {5, BuzzRule.BUZZ},
                 {6, FizzRule.FIZZ},
                 {10, BuzzRule.BUZZ},
-                {15, FizzBuzzRule.FIZZ_BUZZ }
+                {15, FizzBuzzRule.FIZZ_BUZZ },
+                {30, FizzBuzzRule.FIZZ_BUZZ
+                }
         });
     }
 
@@ -43,7 +45,7 @@ public class FizzBuzzTest {
 
     @Before
     public void setup() {
-        List<Rule> rules = Arrays.asList(new FizzBuzzRule(), new FizzRule(), new BuzzRule());
+        List<Rule> rules = Arrays.asList(new FizzBuzzRule(), new FizzRule(), new BuzzRule(),new EchoRule());
         game = new FizzBuzz(rules);
     }
 
@@ -51,6 +53,8 @@ public class FizzBuzzTest {
     public void shouldBe() {
         assertEquals(this.expected, game.answer(this.input));
     }
+
+
 
 
 }
